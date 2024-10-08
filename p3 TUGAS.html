@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff8e1;
+            color: #333;
+        }
+        
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #f39c12;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+        }
+        
+        h2 {
+            color: #f1c40f;
+        }
+        
+        p {
+            line-height: 1.5;
+        }
+        
+        button {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #e67e22;
+        }
+        
+        span {
+            font-weight: bold;
+            color: #e74c3c;
+        }        
+    </style>
+</head>
+<body>
+    <h1>Mengelola Array</h1>
+
+    <div class="container">
+        <h2>1.</h2>
+        <p>const Angka: [20, 10, 3, 30, 58, 42, 6, 9]</p>
+        <p>const Huruf: ['z', 'a', 'c', 'g', 'p']</p>
+        <button id="urutkan-btn">Urutkan</button>
+        <p>Output Angka: <span id="output-angka1"></span></p>
+        <p>Output Huruf: <span id="output-huruf1"></span></p>
+    </div>
+
+    <div class="container">
+        <h2>2.</h2>
+        <p>const Angka: [1, 2, 3, 4, 5, 6, 7, 8, 9]</p>
+        <button id="filter-genap-btn">Tampilkan Angka Genap</button>
+        <p>Output: <span id="output-angka2"></span></p>
+    </div>
+
+    <div class="container">
+        <h2>3.</h2>
+        <p>const Angka: [1, 2, 3, 4, 5, 6, 7, 8, 9]</p>
+        <button id="cek-genap-btn">Cek Angka Genap</button>
+        <p>Output: <span id="output-angka3"></span></p>
+    </div>
+
+    <script>
+        document.getElementById('urutkan-btn').onclick = () => {
+            const angka = [20, 10, 3, 30, 58, 42, 6, 9];
+            const huruf = ['z', 'a', 'c', 'g', 'p'];
+            
+            const angkaTerurut = angka.sort((a, b) => a - b);
+            const hurufTerurut = huruf.sort();
+
+            document.getElementById('output-angka1').textContent = angkaTerurut;
+            document.getElementById('output-huruf1').textContent = hurufTerurut;
+        };
+
+        document.getElementById('filter-genap-btn').onclick = () => {
+            const angka2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            const angkaGenap = angka2.filter(num => num % 2 === 0);
+
+            document.getElementById('output-angka2').textContent = angkaGenap;
+        };
+
+        document.getElementById('cek-genap-btn').onclick = () => {
+            const angka3 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            const cekGenap = angka3.map(num => num % 2 === 0);
+
+            document.getElementById('output-angka3').textContent = cekGenap;
+        };
+    </script>
+</body>
+</html>
