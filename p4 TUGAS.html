@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Barang</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1 style="text-align: center; margin-top: 10px;">Tugas Pertemuan 4</h1>
+    <div class="container mt-5">
+        <h1 class="mb-4">Daftar Barang</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="barang" placeholder="Masukkan nama barang">
+                    <button class="btn btn-primary" type="button" onclick="addBarang()">Tambah</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <ul id="list-barang" class="list-group"></ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var dataBarang = [
+        "Buku Tulis",
+        "Pensil",
+        "Spidol"
+        ];
+
+    function showBarang() {
+        var listBarang = document.getElementById("list-barang");
+        listBarang.innerHTML = "";
+
+        for (let i = 0; i < dataBarang.length; i++) {
+            var btnEdit = `<button class="btn btn-sm btn-warning me-1" onclick="editBarang(${i})">Edit</button>`;
+            var btnHapus = `<button class="btn btn-sm btn-danger" onclick="deleteBarang(${i})">Hapus</button>`;
+
+            listBarang.innerHTML += `
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${dataBarang[i]}
+                    <div>
+                        ${btnEdit}
+                        ${btnHapus}
+                    </div>
+                </li>`;
+        }
+    }
+
+    function addBarang() {
+        var input = document.querySelector("input[name=barang]");
+        if (input.value.trim() !== "") {
+            dataBarang.push(input.value);
+            input.value = "";
+            showBarang();
+        }
+    }
+
+    function editBarang(id) {
+        var newBarang = prompt("Nama baru", dataBarang[id]);
+        if (newBarang !== null && newBarang.trim() !== "") {
+            dataBarang[id] = newBarang;
+            showBarang();
+        }
+    }
+
+    function deleteBarang(id) {
+        if (confirm("Apakah Anda yakin ingin menghapus barang ini?")) {
+            dataBarang.splice(id, 1);
+            showBarang();
+        }
+    }
+
+    showBarang();
+    </script>
+</body>
+</html>
