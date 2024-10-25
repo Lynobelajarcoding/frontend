@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Klik</title>
+</head>
+<body>
+    <h1>Jumlah Klik</h1>
+    <button onclick="tambahKlik()" style="font-size: 25px;">Klik Saya!</button>
+    <p></p>
+    <button onclick="resetKlik()">Reset</button>
+    <p>Anda telah mengklik tombol ini sebanyak <span id="jumlahKlik">0</span> kali.</p>
+
+    <script>
+        let jumlahKlik = 0;
+
+        function tambahKlik() {
+            jumlahKlik++;
+            document.getElementById("jumlahKlik").innerText = jumlahKlik;
+        }
+
+        function resetKlik() {
+            jumlahKlik = 0;
+            document.getElementById("jumlahKlik").innerText = jumlahKlik;
+        }
+    </script>
+</body>
+</html>
