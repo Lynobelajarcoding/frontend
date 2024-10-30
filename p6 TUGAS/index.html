@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pembelian Buah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="input-group">
+        <input type="text" id="buahInput" placeholder="Masukkan nama buah...">
+        <button onclick="checkFruit()">Beli</button>
+    </div>
+
+    <div id="dataPembelian">
+        <h3>Data Pembelian:</h3>
+        <div class="result-group">
+            <label>Nama Buah:</label>
+            <span id="namaBuah">.................</span>
+        </div>
+        <div class="result-group">
+            <label>Harga/Kg:</label>
+            <span id="hargaKg">.................</span>
+        </div>
+        <div class="result-group">
+            <label>Diskon:</label>
+            <span id="diskon">.................</span>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nama Buah</th>
+                <th>Harga/Kg</th>
+                <th>Diskon</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nanas</td>
+                <td>7.500</td>
+                <td>5%</td>
+            </tr>
+            <tr>
+                <td>Anggur</td>
+                <td>35.000</td>
+                <td>15%</td>
+            </tr>
+            <tr>
+                <td>Melon</td>
+                <td>12.500</td>
+                <td>10%</td>
+            </tr>
+            <tr>
+                <td>Semangka</td>
+                <td>35.500</td>
+                <td>10%</td>
+            </tr>
+            <tr>
+                <td>Lemon</td>
+                <td>15.500</td>
+                <td>10%</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
