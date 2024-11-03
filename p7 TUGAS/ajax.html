@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belajar Dasar Ajax Di STIKOM</title>
+</head>
+<body>
+    <h1>Cara Mengirim Data ke Server dengan Ajax</h1>
+    <form method="POST" onsubmit="return sendData()">
+        <label>Title</label>
+        <input type="text" name="title" id="title" placeholder="Judul Artikel">
+        <label>Isi Artikel di Sini</label><br>
+        <textarea id="body" name="body" placeholder="Isi artikel bla bla..." cols="50" rows="10"></textarea>
+        <input type="submit" value="Kirim Sekarang" name="send" />
+    </form>
+    <div id="show"></div>
+
+    <script>
+        function sendData() {
+            var xhr = new XMLHttpRequest();
+            var url = "ajax.php";
+    
+            const title = document.querySelector("#title").value;
+            const body = document.querySelector("#body").value;
+            const data = "title=" + title + "&body=" + body;
+    
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onload = function () {
+                const response = JSON.parse(this.responseText);
+                const show = document.querySelector("#show");
+                show.innerHTML = `
+                <p>Judul Artikel : ${response.judul}</p>
+                <p>Isi Artikel : ${response.isi}</p>
+                `;
+            };
+    
+            xhr.send(data);
+            const show = document.querySelector("#show");
+            show.innerHTML = "Processing";
+            return false;
+        }
+    </script>

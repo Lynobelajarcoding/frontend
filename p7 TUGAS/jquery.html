@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JQuery di STIKOM</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">Kalkulator Harga Paket</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="main" data-loading="true"></div>
+
+                        <form>
+                            <div class="mb-3">
+                                <label for="package" class="form-label">Pilih Paket</label>
+                                <select class="form-select" name="package" id="package">
+                                    <option selected disabled>-- Pilih Paket --</option>
+                                    <option data-price="100000" data-discount="10" data-tax="5">Paket 1</option>
+                                    <option data-price="150000" data-discount="10" data-tax="10">Paket 2</option>
+                                    <option data-price="200000" data-discount="10" data-tax="15">Paket 3</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="price" class="form-label">Harga</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">Rp</span>
+                                    <input type="text" class="form-control" name="price" readonly />
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="discount" class="form-label">Diskon</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">Rp</span>
+                                    <input type="text" class="form-control" name="discount" readonly />
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="tax" class="form-label">Pajak</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">Rp</span>
+                                    <input type="text" class="form-control" name="tax" readonly />
+                                </div>
+                            </div>
+
+                            <div class="alert alert-primary">
+                                <h4 class="mb-0">Total: <span id="total" class="float-end">Rp 0</span></h4>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $('#package').on('change', function(){
+            // Ambil data dari elemen option yang dipilih
+            const price = $('#package option:selected').data('price');
+            const discount = $('#package option:selected').data('discount');
+            const tax = $('#package option:selected').data('tax');
+
+            // Kalkulasi total harga
+            const totalDiscount = (price * discount / 100);
+            const total = price - totalDiscount;
+            const totalTax = (price * tax / 100);
+            const totalFinal = total + totalTax;
+
+            // Format numbers with thousand separators
+            const formatNumber = (num) => num.toLocaleString('id-ID');
+
+            // Tampilkan data ke element
+            $('[name=price]').val(formatNumber(price));
+            $('[name=discount]').val(formatNumber(totalDiscount));
+            $('[name=tax]').val(formatNumber(totalTax));
+
+            $('#total').text(`Rp ${formatNumber(totalFinal)}`);
+        });
+    </script>
+</body>
+</html>
