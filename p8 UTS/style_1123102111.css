@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    color: #e9f3fe;
+    text-align: center;
+}
+
+.card-header-1 {
+    background-color: #007bff;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group .input-group-addon {
+    padding: 12px;
+    background-color: #f0f5ff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Form row styling */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Info alert */
+.info-alert {
+    background-color: #e7f3fe;
+    color: #31708f;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.info-alert i {
+    margin-right: 1px;
+}
+
+.teks-alert {
+    margin-top: 15px;
+}
