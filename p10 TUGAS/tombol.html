@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membuat Tombol dengan JQuery UI</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="tombol.css">
+    <style>
+        .ui-menu { position: absolute; width: 100px; }
+        body {
+            padding: 20px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("button,input[type=submit],a").button();
+            $("#format").buttonset();
+            $("#checkbox-button-1").button({
+                icons: {
+                    primary: "ui-icon-locked"
+                },
+                text: false
+            });
+            $("#checkbox-button-2").button({
+                icons: {
+                    primary: "ui-icon-locked"
+                }
+            });
+            $(".checkbox-button-3").button({
+                icons: {
+                    primary: "ui-icon-gear",
+                    secondary: "ui-icon-triangle-1-s"
+                }
+            });
+            $(".checkbox-button-4").button({
+                icons: {
+                    primary: "ui-icon-gear",
+                    secondary: "ui-icon-triangle-1-s"
+                },
+                text: false
+            });
+            $("#radio").buttonset();
+            $("#rerun").button().click(function() {
+                alert("Running the last action");
+            }).next().button({
+                text: false,
+                icons: {
+                    primary: "ui-icon-triangle-1-s"
+                }
+            }).click(function() {
+                var menu = $(this).parent().next().show().position({
+                    my: "left top",
+                    at: "left bottom",
+                    of: this
+                });
+                $(document).one("click", function() {
+                    menu.hide();
+                });
+                return false;
+            }).parent().buttonset().next().hide().menu();
+            $("#beginning").button({
+                text: false,
+                icons: {
+                    primary: "ui-icon-seek-start"
+                }
+            });
+            $("#rewind").button({
+                text: false,
+                icons: {
+                    primary: "ui-icon-seek-prev"
+                }
+            });
+            $("#play").button({
+                text: false,
+                icons: {
+                    primary: "ui-icon-play"
+                }
+            }).click(function() {
+                var options;
+                if ($(this).text() === "play") {
+                    options = {
+                        label: "pause",
+                        icons: {
+                            primary: "ui-icon-pause"
+                        }
+                    };
+                } else {
+                    options = {
+                        label: "play",
+                        icons: {
+                            primary: "ui-icon-play"
+                        }
+                    };
+                }
+                $(this).button("option", options);
+            });
+            $("#stop").button({
+                text: false,
+                icons: {
+                    primary: "ui-icon-stop"
+                }
+            }).click(function() {
+                $("#play").button("option", {
+                    label: "play",
+                    icons: {
+                        primary: "ui-icon-play"
+                    }
+                });
+            });
+            $("#forward").button({
+                text: false,
+                icons: {
+                    primary: "ui-icon-seek-next"
+                }
+            });
+            $("#end").button({
+                text: false,
+                icons: {
+                    primary: "ui-icon-seek-end"
+                }
+            });
+            $("#shuffle").button();
+            $("#repeat").buttonset();
+        });
+    </script>
+</head>
+<body class="container">
+    <h1 class="my-4">Membuat tombol dengan jQuery UI</h1>
+
+    <h3 class="my-4">Default button</h3>
+    <button class="btn btn-primary">Tombol</button>
+    <input type="submit" class="btn btn-success" value="Tombol submit">
+    <a href="#" class="btn btn-info">Tombol link</a>
+
+    <h3 class="my-4">Checkbox button</h3>
+    <div id="format" class="my-2">
+        <input type="checkbox" id="check1"><label for="check1">B</label>
+        <input type="checkbox" id="check2"><label for="check2">I</label>
+        <input type="checkbox" id="check3"><label for="check3">U</label>
+    </div>
+
+    <h3 class="my-4">Icon buttons</h3>
+    <button class="checkbox-button-1 btn btn-dark">Button with icon only</button>
+    <button class="checkbox-button-2 btn btn-dark">Button with icon on the left</button>
+    <button class="checkbox-button-3 btn btn-dark">Button with two icons</button>
+    <button class="checkbox-button-4 btn btn-dark">Button with two icons and no text</button>
+
+    <h3 class="my-4">Radio button</h3>
+    <div id="radio" class="my-2">
+        <input type="radio" id="radio1" name="radio"><label for="radio1">Choice 1</label>
+        <input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">Choice 2</label>
+        <input type="radio" id="radio3" name="radio"><label for="radio3">Choice 3</label>
+    </div>
+
+    <h1 class="my-4">Split button</h1>
+    <div class="my-2">
+        <button id="rerun" class="btn btn-warning">Run last action</button>
+        <button id="select" class="btn btn-secondary">Select an action</button>
+        <ul class="list-group">
+            <li class="list-group-item">Open...</li>
+            <li class="list-group-item">Save</li>
+            <li class="list-group-item">Delete</li>
+        </ul>
+    </div>
+
+    <h1 class="my-4">Toolbar button</h1>
+    <div id="toolbar" class="ui-widget-header ui-corner-all p-2">
+        <button id="beginning" class="btn btn-light"><i class="fas fa-step-backward"></i> go to beginning</button>
+        <button id="rewind" class="btn btn-light"><i class="fas fa-backward"></i> rewind</button>
+        <button id="play" class="btn btn-light"><i class="fas fa-play"></i> play</button>
+        <button id="stop" class="btn btn-light"><i class="fas fa-stop"></i> stop</button>
+        <button id="forward" class="btn btn-light"><i class="fas fa-forward"></i> fast forward</button>
+        <button id="end" class="btn btn-light"><i class="fas fa-step-forward"></i> go to end</button>
+        <input type="checkbox" id="shuffle"><label for="shuffle"> Shuffle</label>
+        <span id="repeat" class="ml-2">
+            <input type="radio" id="repeat0" name="repeat" checked="checked"><label for="repeat0"> No Repeat</label>
+            <input type="radio" id="repeat1" name="repeat"><label for="repeat1"> Once</label>
+            <input type="radio" id="repeatall" name="repeat"><label for="repeatall"> All</label>
+        </span>
+    </div>
+</body>
+</html>

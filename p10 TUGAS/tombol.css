@@ -1,0 +1,181 @@
+/* Tombol CSS untuk mempercantik elemen-elemen dalam halaman */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+}
+
+h1, h3 {
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Gaya untuk tombol-tombol standar */
+button, input[type=submit], a {
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover, input[type=submit]:hover, a:hover {
+    transform: scale(1.05);
+}
+
+/* Tombol default dengan desain lebih baik */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
+
+.btn-dark {
+    background-color: #343a40;
+    color: white;
+}
+
+.btn-dark:hover {
+    background-color: #23272b;
+}
+
+.btn-light {
+    background-color: #f8f9fa;
+    color: #495057;
+    border: 1px solid #ced4da;
+}
+
+.btn-light:hover {
+    background-color: #e2e6ea;
+}
+
+/* Gaya untuk bagian checkbox dan radio button */
+#format input[type=checkbox], #radio input[type=radio] {
+    margin-right: 5px;
+}
+
+/* Gaya untuk split button */
+#rerun {
+    margin-right: 10px;
+}
+
+#select {
+    position: relative;
+}
+
+#select + .list-group {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+#select:hover + .list-group {
+    display: block;
+}
+
+.list-group-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.list-group-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Gaya untuk toolbar buttons */
+#toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#toolbar button {
+    margin: 5px;
+}
+
+#toolbar input[type=checkbox], #toolbar input[type=radio] {
+    margin-right: 5px;
+}
+
+#repeat {
+    display: flex;
+    align-items: center;
+}
+
+/* Gaya untuk menu dan buttonset */
+.ui-buttonset {
+    margin-bottom: 15px;
+}
+
+.ui-buttonset input[type=radio], .ui-buttonset input[type=checkbox] {
+    display: none;
+}
+
+.ui-buttonset label {
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.ui-buttonset input[type=radio]:checked + label,
+.ui-buttonset input[type=checkbox]:checked + label {
+    background-color: #0056b3;
+}
+
+.ui-buttonset label:hover {
+    background-color: #0056b3;
+}
+
+.ui-menu {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.ui-menu .ui-menu-item {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.ui-menu .ui-menu-item:hover {
+    background-color: #f1f1f1;
+    position: absolute; width: 100px;
+}
