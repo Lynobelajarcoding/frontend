@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JQuery UI Part 5 : Membuat Form Autocomplete Dengan JQuery UI</title>
+    <script type="text/javascript" src="/Pertemuan 11/p11 TUGAS/jquery.js"></script>
+    <script type="text/javascript" src="/Pertemuan 11/p11 TUGAS/jquery-ui/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Pertemuan 11/p11 TUGAS/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/Pertemuan 11/p11 TUGAS/style.css">
+</head>
+<body>
+    <h1>Membuat Form Autocomplete Dengan JQuery UI</h1>
+    <div class="ui-widget">
+        <label for="tag">Tags: </label>
+        <input id="tag">
+    </div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var pemrograman = [
+            "HTML",
+            "CSS",
+            "PHP",
+            "Javascript",
+            "Framework codeigniter",
+            "Framework Yii",
+            "Framework Laravel",
+            "Framework Ionic",
+            "Java",
+            "C",
+            "C++",
+            "Python",
+            "Ruby"
+        ];
+        $( "#tag" ).autocomplete({
+            source: pemrograman
+        });
+    });
+</script>
+</html>    

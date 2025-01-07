@@ -1,0 +1,16 @@
+body{
+    font-family: sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+
+.input-tanggal{
+    padding: 10px;
+    font-size: 14pt;
+}
+
+.ui-menu {
+    width: 200px;
+}

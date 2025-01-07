@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Membuat Modal Dialog Dengan JQuery UI</title>
+    <script type="text/javascript" src="/Pertemuan 11/p11 TUGAS/jquery.js"></script>
+    <script type="text/javascript" src="/Pertemuan 11/p11 TUGAS/jquery-ui/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Pertemuan 11/p11 TUGAS/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/Pertemuan 11/p11 TUGAS/style.css">
+</head>
+<body>
+    <h1>Membuat Modal Dialog Dengan JQuery UI</h1>
+    
+    <!-- modal dialog -->
+    <div id="kotak-dialog" title="INI HEADING MODAL">
+        <p>
+            SELAMAT DATANG DI WWW.stikombanyuwangi.ac.id
+            Kampus Jln. A. Yani 80
+            Banyuwangi
+        </p>
+    </div>
+    <!-- akhir modal dialog -->
+    
+    <!-- tombol yang menampilkan modal dialog jika di klik -->
+    <button id="tombol">KLIK Tombol !!</button>
+    <!-- akhir tombol -->
+</body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $( "#kotak-dialog" ).dialog({
+            autoOpen: false,
+            show: {
+                effect: "blind",
+                duration: 1000
+            },
+            hide: {
+                effect: "explode",
+                duration: 1000
+            }
+        });
+    
+        $( "#tombol" ).click(function() {
+            $( "#kotak-dialog" ).dialog( "open" );
+        });
+    });
+</script>
+</html>    

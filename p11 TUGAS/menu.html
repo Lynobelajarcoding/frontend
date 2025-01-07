@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Membuat Menu Navigasi Dengan JQuery UI</title>
+    <script type="text/javascript" src="/Pertemuan 11/p11 TUGAS/jquery.js"></script>
+    <script type="text/javascript" src="/Pertemuan 11/p11 TUGAS/jquery-ui/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Pertemuan 11/p11 TUGAS/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/Pertemuan 11/p11 TUGAS/style.css">
+</head>
+<body>
+    <h1>Membuat Menu Navigasi Dengan JQuery UI</h1>
+    <ul id="menu">
+        <li class="ui-state-disabled">Tutorial</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>PHP Framework
+            <ul>
+                <li>CodeIgniter</li>
+                <li>Yii</li>
+                <li>Laravel</li>
+            </ul>
+        </li>
+    </ul>
+        <li>Ionic</li>
+        <li>Javascript Library
+    <ul>
+        <li>JQuery
+            <ul>
+                <li>JQuery</li>
+                <li>JQuery UI</li>
+                <li>JQuery Mobile</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+<script type="text/javascript">
+    $(document).ready(function(){
+    $("#menu").menu();
+    });
+</script>
+</html>

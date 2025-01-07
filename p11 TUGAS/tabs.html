@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Membuat Widget Tabs Dengan Jquery UI</title>
+    <script type="text/javascript" src="/Pertemuan 11/p11 TUGAS/jquery.js"></script>
+    <script type="text/javascript" src="/Pertemuan 11/p11 TUGAS/jquery-ui/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Pertemuan 11/p11 TUGAS/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/Pertemuan 11/p11 TUGAS/style.css">
+</head>
+<body>
+    <h1>Membuat Widget Tabs Dengan Jquery UI</h1>
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-pertama">Tutorial</a></li>
+            <li><a href="#tabs-kedua">STIKOM</a></li>
+            <li><a href="#tabs-ketiga">JQuery UI</a></li>
+        </ul>
+        <div id="tabs-pertama">
+            <p>
+                Tutorial jquery ui : Membuat Widget Tabs Dengan Jquery UI. ini merupakan tab pertama.
+                di tandai dengan tabs masing-masing sesuai id. widget tab berguna untuk memberikan pengelompokan pada data dan banyak lagi kegunaan lainnya.
+            </p>
+        </div>
+        <div id="tabs-kedua">
+            <p>
+                STIKOM adalah sebuah Perguruan Tinggi di bidang informatika yang membekali mahasiswanya dengan beberapa matakulian antara lain pemrograman dasar, menengah hingga lanjutan. Perpustakaan STIKOM menyediakan tutorial-tutorial berkualitas dan di harapkan dapat membantu
+                mahasiswa yang membaca tutorial di perpustakaan dalam mempelajari pemrograman web, mobile maupun desktop.
+            </p>
+            <ul>
+                <li>Web Programming</li>
+                <li>Web Design</li>
+                <li>Mobile App Development</li>
+            </ul>
+        </div>
+    </div>
+    <div id="tabs-ketiga">
+        <p>
+            JQuery ui merupakan library yang di kembangkan dari jquery. jquery ui di khususkan untuk bagian front-end atau bagian user interface.
+            jquery ui menyediakan beberapa effect yang di kembangkan dari jquery dan juga beberapa widget yang sangat berguna,
+            tinggal di gunakan dengan memberikan fungsi yang telah di sediakan oleh jquery ui.
+        </p>
+    </div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $( "#tabs" ).tabs();
+    });
+</script>
+</html>
