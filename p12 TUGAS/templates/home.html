@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Mobile Legends BANG BANG</title>
+</head>
+<body>
+    <nav>
+        <a href="main">Home</a> |
+        <a href="">Kontak</a> |
+        <a href="">Tentang Kami</a>
+    </nav>
+    <hr />
+    <header style="text-align: center;">
+        <img src="{{ url_for('static', filename='img/logo_mlbb.png') }}" width="500" height="170" style="border-radius: 0%;" />
+    </header>
+    <hr />
+    <article style="text-align: center;">
+        <h2>Tentang MLBB</h2>
+        <p>
+          Mobile Legends: Bang Bang adalah permainan video seluler bergenre multiplayer online battle arena (MOBA) 
+          <br>yang dikembangkan dan diterbitkan oleh Moonton, 
+          anak perusahaan dari ByteDance.
+        </p>
+    </article>
+    <div style="max-width: 600px; margin: 3em auto;">
+        <table border="1" width="100%">
+          <thead>
+            <tr>
+              <th colspan="2">MLBB Character</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul class="item">
+                <li>
+                  <img src="{{ url_for('static', filename='img/lancelot.jpeg') }}"/>
+                </li class="item">
+                <li>
+                  <img src="{{ url_for('static', filename='img/chou.jpeg') }}"/>
+                </li>
+                <li class="item">
+                  <img src="{{ url_for('static', filename='img/ruby.jpeg') }}" />
+                </li>
+                <li class="item">
+                  <img src="{{ url_for('static', filename='img/benedetta.jpeg') }}" />
+                </li>
+                <li class="item">
+                  <img src="{{ url_for('static', filename='img/hayabusa.jpeg') }}" />
+                </li>
+                <li class="item">
+                  <img src="{{ url_for('static', filename='img/leomord.jpeg') }}" />
+                </li>
+                <li class="item">
+                  <img src="{{ url_for('static', filename='img/moskov.jpeg') }}" />
+                </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li class="item">
+                    <img src="{{ url_for('static', filename='img/granger.jpeg') }}"/>
+                  </li>
+                  <li class="item">
+                    <img src="{{ url_for('static', filename='img/yss.jpeg') }}"/>
+                  </li>
+                  <li class="item">
+                    <img src="{{ url_for('static', filename='img/alucard.jpeg') }}"/>
+                  </li>
+                  <li class="item">
+                    <img src="{{ url_for('static', filename='img/valir.jpeg') }}"/>
+                  </li>
+                  <li class="item">
+                    <img src="{{ url_for('static', filename='img/yuzhong.jpeg') }}"/>
+                  </li>
+                  <li class="item">
+                    <img src="{{ url_for('static', filename='img/xborg.jpeg') }}"/>
+                  </li>
+                  <li class="item">
+                    <img src="{{ url_for('static', filename='img/gusion.jpeg') }}"/>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+        <footer style="text-align: center;">
+          <p>Copyright &copy; Moonton. All rights reserved</p>
+        </footer>
+      </div>      
+</body>
+</html>
