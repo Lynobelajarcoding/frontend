@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>STIKOM PGRI BANYUWANGI</title>
+</head>
+<body>
+    <nav>
+        <a href="#main">Home</a> |
+        <a href="#jurusan">Jurusan</a> |
+        <a href="#kontak">Kontak</a> |
+        <a href="#tentang">Tentang Kami</a>
+    </nav>
+    <hr />
+    <header style="text-align: center;">
+        <img src="{{ url_for('static', filename='img/logo_mlbb.png') }}" width="500" height="200" style="border-radius: 0%;" />
+        <h1>STIKOM PGRI Banyuwangi</h1>
+    </header>
+    <hr />
+    <article style="text-align: center;">
+        <h2>Tentang STIKOM</h2>
+        <p>
+            STIKOM PGRI BANYUWANGI Mempunyai 2 program studi <br />
+            Teknik Informatika dan Manajemen Informatika Yang Memberikan <br />
+            Bekal Mata Kuliah Pemrograman Sbb :
+        </p>
+    </article>
+    <div style="max-width: 600px; margin: 3em auto">
+      <table border="1" width="100%">
+          <thead>
+              <tr>
+                  <th colspan="2">Manajemen Informatika & Teknik Informatika</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for row in container %}
+              <tr>
+                  <td>
+                      <ul>{{ row[3] }}</ul>
+                  </td>
+                  <td>
+                      <ul><img src="{{ url_for('static', filename='img/' + row[4])}}" width="50" height="50" style="border-radius: 50%;" /></ul>
+                  </td>
+              </tr>
+            </tbody>
+            {% endfor %}
+      </table>
+  </div>
+  <hr />
+  <footer style="text-align: center;">
+      <p>Copyright &copy; STIKOM PGRI Banyuwangi</p>
+  </footer>  
+</body>
+</html>
