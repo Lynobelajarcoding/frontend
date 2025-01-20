@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/backend.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="/" target="_blank"><h1>elCasa - admin</h1></a>
+        <ul>
+            <a href="/logout">
+                <div id="bxs--door-open"></div>
+            </a>      
+        </ul>
+    </nav>
+
+    <div class="form-container">
+        <!-- Formulir -->
+        <form action="/admin" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" id="id" value="{{ room_to_edit._id if room_to_edit else '' }}">
+
+            <label for="name">Nama Kamar:</label>
+            <input type="text" name="name" id="name" value="{{ room_to_edit.name if room_to_edit else '' }}" required>
+
+            <label for="description">Deskripsi:</label>
+            <textarea name="description" id="description" required>{{ room_to_edit.description if room_to_edit else '' }}</textarea>
+
+            <label for="detail">Detail:</label>
+            <textarea name="detail" id="detail" required>{{ room_to_edit.detail if room_to_edit else '' }}</textarea>
+
+            <label for="type">Tipe:</label>
+            <select name="type" id="type">
+                <option value="single" {% if room_to_edit and room_to_edit.type == 'single' %}selected{% endif %}>Single</option>
+                <option value="double" {% if room_to_edit and room_to_edit.type == 'double' %}selected{% endif %}>Double</option>
+                <option value="suite" {% if room_to_edit and room_to_edit.type == 'suite' %}selected{% endif %}>Suite</option>
+            </select>
+
+            <label for="price">Harga:</label>
+            <input type="number" name="price" id="price" value="{{ room_to_edit.price if room_to_edit else '' }}" required>
+
+            <label for="photo">Foto:</label>
+            <input type="file" name="photo" id="photo" accept="image/*" onchange="previewImage(event)">
+
+            <button type="submit">{{ 'Edit Kamar' if room_to_edit else 'Tambah Kamar' }}</button>
+        </form>
+
+        <!-- Area Pratinjau -->
+        <div class="preview-container">
+            <h3>Pratinjau Foto:</h3>
+            <img id="photo-preview" src="{{ room_to_edit.photo if room_to_edit and room_to_edit.photo else '' }}" alt="Preview Foto" onerror="this.style.display='none'">
+        </div>
+    </div>
+
+    <div class="rooms-list">
+        {% for room in rooms %}
+        <div class="room-item">
+            <h3>{{ room.name }}</h3>
+            <img src="{{ room.photo }}" alt="Room Photo" class="room-photo">
+            <p>{{ room.description }}</p>
+            <p> ${{ room.price }} / night</p>
+            <form action="/admin" method="get" style="display: inline;">
+                <input type="hidden" name="edit_id" value="{{ room._id }}">
+                <button type="submit">Edit</button>
+            </form>
+            <a href="/delete/{{ room._id }}"><button type="submit">Hapus</button></a>
+        </div>
+        {% endfor %}
+    </div>    
+
+    <script>
+        function previewImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('photo-preview');
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>

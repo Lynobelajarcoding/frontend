@@ -1,0 +1,258 @@
+* {
+    text-decoration: none;
+    border: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #444;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    margin-top: -22px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    font-family: 'Dancing Script', cursive;
+    position: relative;
+    top: 10px;
+    font-size: 24px;
+    background: linear-gradient(to right, #FF8C00, #FFD700);
+    background-clip: text;
+    color: transparent;
+}
+
+/* Form Container */
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #555;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Make labels span the entire width of the form like the button */
+form label {
+    grid-column: span 2;
+    color: #ddd;
+    text-align: left; /* Optional, for better alignment */
+}
+
+form {
+    max-width: 400px;
+}
+
+/* Ensure input fields have the same width as the labels and buttons */
+form input {
+    border: none;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+}
+
+form textarea {
+    border-radius: 5px;
+    grid-column: span 2; /* Ensure button spans both columns */
+    background-color: #444;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    padding: 12px;
+}
+
+form select {
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    grid-column: span 2; /* Ensure button spans both columns */
+    background-color: #444;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    padding: 12px;
+}
+
+form button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    width: 593px;
+    border-radius: 5px;
+    grid-column: span 2; /* Ensure button spans both columns */
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(to left, #FF8C00, #FFD700);
+    padding: 12px;
+    text-align: center;
+    color: #fff; /* Default text color */
+    transition: background-color 0.9s ease, color 0.9s ease;
+}
+
+form button:hover {
+    color: #333; /* Change text color on hover */
+}
+
+#name {
+    width: 550px;
+    height: 1px;
+}
+
+#description {
+    width: 566px;
+    height: 100px;
+}
+
+#detail {
+    width: 566px;
+    height: 100px;
+}
+
+#type {
+    width: 592px;
+}
+
+#price {
+    width: 552px;
+    height: 1px;
+}
+
+.preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.preview-container img {
+    width: 540px;
+    height: 330px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.preview-container h3 {
+    margin: 0;
+    background: linear-gradient(to right, #FF8C00, #FFD700);
+    background-clip: text;
+    color: transparent;
+}
+
+.rooms-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Keep 3 columns */
+    gap: 15px; /* Space between items */
+    padding: 15px; /* Padding around the grid */
+    max-width: 100%; /* Ensure the container doesn't exceed the screen width */
+    box-sizing: border-box; /* Ensure padding doesn't push the content out */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Individual room item */
+.room-item {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #333;
+    max-width: 100%; /* Ensure the container doesn't exceed the screen width */
+    max-height: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+    word-wrap: break-word; /* Prevent content from overflowing */
+}
+
+/* Image within the room item */
+.room-item img.room-photo {
+    width: 100%; /* Ensure the image takes full width */
+    height: 330px; /* Fixed height for consistency */
+    border-radius: 5px;
+    object-fit: cover; /* Ensure the image doesn't stretch */
+}
+
+/* Room title */
+.room-item h3 {
+    color: #c6c6c6;
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
+/* Room description and price */
+.room-item p {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* Buttons for editing and deleting */
+.room-item button {
+    padding: 7px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #FF8C00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: color 0.9s ease;
+}
+
+.room-item a button {
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    padding: 7.3px 286.3px;
+    margin-top: 11px;
+    cursor: pointer;
+    background-color: #FF3B30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: color 0.9s ease;
+}
+
+.room-item button:hover {
+    background-color: #cd6e02;
+    color: #333; /* Change text color on hover */
+}
+
+.room-item a button:hover {
+    background-color: #FF3B30;
+    color: #333; /* Change text color on hover */
+}
+
+#bxs--door-open {
+    position: relative;
+    top: 12px;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M5 5v14a1 1 0 0 0 1 1h3v-2H7V6h2V4H6a1 1 0 0 0-1 1m14.242-.97l-8-2A1 1 0 0 0 10 3v18a.998.998 0 0 0 1.242.97l8-2A1 1 0 0 0 20 19V5a1 1 0 0 0-.758-.97M15 12.188a1.001 1.001 0 0 1-2 0v-.377a1 1 0 1 1 2 .001z'/%3E%3C/svg%3E");
+    background: linear-gradient(to right, #FF8C00, #FFD700); /* Gradien dari kuning ke oranye */
+    color: transparent; /* Menghilangkan warna teks biasa agar gradien terlihat */
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}

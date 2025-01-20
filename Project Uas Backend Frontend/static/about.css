@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: #444;
+    color: #fff;
+}
+
+nav {
+    background-color: #333;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    position: relative;
+    top: 1.5px;
+    background: linear-gradient(to right, #FF8C00, #FFD700);
+    background-clip: text;
+    color: transparent;
+}
+
+.logo {
+    font-family: 'Dancing Script', cursive;
+    text-decoration: none;
+    h1 {
+        font-size: 36px;
+    }
+}
+
+.home {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    position: relative;
+    left: 145px;
+    h1 {
+        font-size: 20px;
+    }
+}
+
+.rooms {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    position: relative;
+    right: 140px;
+    h1 {
+        font-size: 20px;
+    }
+}
+
+.about {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    position: relative;
+    right: 5px;
+    h1 {
+        font-size: 20px;
+    }
+}
+
+.about-h1 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.about-p {
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+    padding-left: 150px;
+    padding-right: 150px;
+    margin-bottom: 50px;
+}

@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: #444;
+    color: #fff;
+}
+
+nav {
+    background-color: #333;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    position: relative;
+    top: 1.5px;
+    background: linear-gradient(to right, #FF8C00, #FFD700);
+    background-clip: text;
+    color: transparent;
+}
+
+.logo {
+    font-family: 'Dancing Script', cursive;
+    text-decoration: none;
+    h1 {
+        font-size: 36px;
+    }
+}
+
+.home {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    position: relative;
+    left: 145px;
+    h1 {
+        font-size: 20px;
+    }
+}
+
+.rooms {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    position: relative;
+    right: 140px;
+    h1 {
+        font-size: 20px;
+    }
+}
+
+.about {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    position: relative;
+    right: 5px;
+    h1 {
+        font-size: 20px;
+    }
+}
+
+.card {
+    min-height: 100%; /* Pastikan semua kartu memiliki tinggi minimum yang sama */
+}
+
+.card-body {
+    flex: 1; /* Biarkan isi kartu meregang */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Tempatkan tombol di bagian bawah */
+}

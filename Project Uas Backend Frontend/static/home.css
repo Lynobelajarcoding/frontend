@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #444;
+    color: #fff;
+}
+
+nav {
+    background-color: #333;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    position: relative;
+    top: 1.5px;
+    background: linear-gradient(to right, #FF8C00, #FFD700);
+    background-clip: text;
+    color: transparent;
+}
+
+.logo {
+    font-family: 'Dancing Script', cursive;
+    text-decoration: none;
+    h1 {
+        font-size: 36px;
+    }
+}
+
+.home {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    position: relative;
+    left: 145px;
+    h1 {
+        font-size: 20px;
+    }
+}
+
+.rooms {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    position: relative;
+    right: 140px;
+    h1 {
+        font-size: 20px;
+    }
+}
+
+.about {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    position: relative;
+    right: 5px;
+    h1 {
+        font-size: 20px;
+    }
+}
+
+.hero {
+    height: 400px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero img {
+    width: 100%;
+    height: 690px;
+    object-fit: cover;
+}
+
+.hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    position: absolute;
+    top: 250px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    position: absolute;
+    top: 300px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.facilities {
+    width: 100%;
+    height: 450px;
+    background-color: #212529; /* Latar belakang hitam */
+    color: #fff; /* Teks putih agar terlihat di atas hitam */
+    padding: 60px; /* Ruang internal agar konten lebih rapi */
+}
+
+.facilities p {
+    color: #fff; /* Teks putih agar terlihat di atas hitam */
+}
+
+.facilities h2 {
+    background: linear-gradient(to right, #FF8C00, #FFD700);
+    background-clip: text;
+    color: transparent;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    position: relative;
+    top: 120px;
+}
+
+.row {
+    position: relative;
+    top: 130px;
+    color: #333;
+}
+
+footer {
+    font-weight: 100;
+    background-color: #333;
+    width: 1263px;
+    height: 60px;
+    position: relative;
+    top: 180px;
+    right: 60px;
+}
+
+.material-symbols--wifi {
+    display: inline-block;
+    width: 90px;
+    height: 80px;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 21q-1.05 0-1.775-.725T9.5 18.5t.725-1.775T12 16t1.775.725t.725 1.775t-.725 1.775T12 21m-5.65-5.65l-2.1-2.15q1.475-1.475 3.463-2.337T12 10t4.288.875t3.462 2.375l-2.1 2.1q-1.1-1.1-2.55-1.725T12 13t-3.1.625t-2.55 1.725M2.1 11.1L0 9q2.3-2.35 5.375-3.675T12 4t6.625 1.325T24 9l-2.1 2.1q-1.925-1.925-4.462-3.012T12 7T6.563 8.088T2.1 11.1'/%3E%3C/svg%3E");
+}
+
+.material-symbols--pool {
+    display: inline-block;
+    width: 90px;
+    height: 80px;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M2 21v-2q.95 0 1.425-.5T5.3 18t1.925.5t1.425.5t1.425-.5T12 18t1.925.5t1.425.5t1.425-.5T18.7 18t1.875.5T22 19v2q-1.475 0-1.937-.5T18.7 20t-1.425.5t-1.925.5t-1.925-.5T12 20t-1.425.5t-1.925.5t-1.925-.5T5.3 20t-1.363.5T2 21m0-4.5v-2q.95 0 1.425-.5t1.875-.5t1.938.5t1.412.5q.9 0 1.425-.5T12 13.5t1.925.5t1.425.5t1.425-.5t1.925-.5t1.875.5t1.425.5v2q-1.475 0-1.937-.5t-1.363-.5t-1.388.5t-1.962.5q-1.425 0-1.937-.5T12 15.5q-.95 0-1.412.5t-1.938.5t-1.963-.5t-1.387-.5t-1.362.5T2 16.5m4.9-5.1l3.325-3.325l-1-1q-.825-.825-1.75-1.2T5.2 5.5V3q1.875 0 3.1.413T10.7 5l6.4 6.4q-.425.275-.825.438T15.35 12q-.9 0-1.425-.5T12 11t-1.925.5t-1.425.5q-.525 0-.925-.162T6.9 11.4M16.7 3q1.05 0 1.775.738T19.2 5.5q0 1.05-.725 1.775T16.7 8t-1.775-.725T14.2 5.5q0-1.025.725-1.763T16.7 3'/%3E%3C/svg%3E");
+}
+
+.mdi--food {
+    display: inline-block;
+    width: 90px;
+    height: 80px;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M18.06 23h1.66c.84 0 1.53-.65 1.63-1.47L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26c1.44 1.42 2.43 2.89 2.43 5.29zM1 22v-1h15.03v1c0 .54-.45 1-1.03 1H2c-.55 0-1-.46-1-1m15.03-7C16.03 7 1 7 1 15zM1 17h15v2H1z'/%3E%3C/svg%3E");
+}
+
+.mdi--weight-lifter {
+    display: inline-block;
+    width: 90px;
+    height: 80px;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 5c-1.11 0-2 .89-2 2s.89 2 2 2s2-.89 2-2s-.89-2-2-2m10-4v5h-2V4H4v2H2V1h2v2h16V1zm-7 10.26V23h-2v-5h-2v5H9V11.26C6.93 10.17 5.5 8 5.5 5.5V5h2v.5C7.5 8 9.5 10 12 10s4.5-2 4.5-4.5V5h2v.5c0 2.5-1.43 4.67-3.5 5.76'/%3E%3C/svg%3E");
+}
